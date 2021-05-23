@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Survey about YouTube's UI</title>
+  </head>
+  
+  <body>
+	<h1 class="title">Survey about YouTube's UI</h1>
+	
+	<form id="survey">
+		<br>
+		<br>
+
+		<h2 id="mainQuestion">What do you think of the UI on the <a class="websiteLink" href="https://www.youtube.com">YouTube</a> homepage?</h2>	
+
+		<a href="https://www.youtube.com">
+			<img class="screenshot" src="images/youtube-homepage.png" alt="Screenshot of YouTube's homepage" height="400">
+		</a>
+
+		<div class="question">
+				<h2> What is your name? </h2>
+			
+			<div class="innerQuestion">
+				<input type="text" name="name"></p>
+			</div>
+		</div>
+
+		<div class="question">
+			<h2> Which of the following UI elements, if any, have an unclear usage? </h2>
+
+			<div class="innerQuestion">
+				<input type="checkbox" name="Color" value="three-line">Three line icon in top left (Used to hide and show panel on left)<br>
+				<input type="checkbox" name="Color" value="magnifying-glass">Magnifying glass icon in top centre (Used to search)<br>
+				<input type="checkbox" name="Color" value="microphone">Microphone icon in top centre (Used to search using voice)<br>
+				<input type="checkbox" name="Color" value="grid">Grid icon in top right (Used to switch Google apps)<br>
+				<input type="checkbox" name="Color" value="vertical-dots">Three vertical dots icon in top right (Used to access more options)<br>
+
+			</div>
+		</div>
+
+		<div class="question">
+			<h2>
+				Which "Best of YouTube" category are you most likely to watch?
+			</h2>
+
+			<div class="innerQuestion">
+				<select id="bestCategory">
+					<option value="Music" selected="selected">Music</option>
+					<option value="Sports">Sports</option>
+					<option value="Gaming">Gaming</option>
+					<option value="Movies">Movies & Shows</option>
+					<option value="News">News</option>
+					<option value="Live">Live</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="question">
+			<h2>
+				Which section has the most clear design?
+			</h2>
+
+			<div class="innerQuestion">
+				<input type="radio" name="clearDesign" value="left">Left panel<br>
+				<input type="radio" name="clearDesign" value="categoryChooser">Top-middle category chooser<br>
+				<input type="radio" name="clearDesign" value="videoList">Video list<br>
+			</div>
+		</div>
+
+		<div class="question">
+			<h2>
+				Any final comments?
+			</h2>
+
+			<div class="innerQuestion">
+				<textarea rows="5" cols="30"></textarea>
+			</div>
+		</div>
+			
+				
+		<button id="submit" type="button">
+			Submit
+		</button>
+			
+		<p id="signature">Website designed by Ajay</p>	
+		
+	</form>
+  </body>
+</html> 
