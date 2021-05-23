@@ -20,12 +20,20 @@ body {
 
 .title {
   color: white;
-	font-size: 60px;
+	font-size: 50px;
 	text-align: center;
 	margin: 0;
 	padding: 20px 0;
   background-color: rgb(37, 37, 37);
   border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title img {
+  padding-right: 15px;
 }
 
 #mainQuestion {
@@ -61,10 +69,13 @@ a.websiteLink {
   max-width: 60%;
 }
 
+#submitContainer {
+  display: flex;
+  justify-content: center;
+}
 
 #submit {
   display: block;
-  width: 100%;
   border: none;
   color: white;
   background-color: #1f1f1f;  /* yellow */
