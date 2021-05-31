@@ -94,7 +94,7 @@ function selectedItems(){
 	
 	// build list of selected item
 	var para = document.createElement("p");
-	para.innerHTML = "You selected : ";
+	para.innerHTML = "You selected: ";
 	para.appendChild(document.createElement("br"));
 	para.appendChild(document.createElement("br"));
 
