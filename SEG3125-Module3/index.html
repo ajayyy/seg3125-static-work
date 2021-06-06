@@ -13,9 +13,9 @@
 
   <!-- Tab links, each one with an onclick event associated with it -->
   <div class="tab">
-    <button id="PersonalDataTab" class="tablinks" onclick="openInfo(event, 'PersonalData')">Personal Data</button>
-    <button id="ProductsTab" class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-    <button id="CartTab" class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    <button id="PersonalDataTab" class="tablinks" onclick="openInfo('PersonalData')">Personal Data</button>
+    <button id="ProductsTab" class="tablinks" onclick="openInfo('Products')">Products</button>
+    <button id="CartTab" class="tablinks" onclick="openInfo('Cart')">Cart</button>
   </div>
 
   <!-- Tab content -->
@@ -51,7 +51,7 @@
     <p>We preselected products based on your restrictions</p>
     Choose items to buy:
     <table id="displayProduct"></table>
-    <button id="addCart" class="body-button" type="button" class="block" onclick="selectedItems(); openInfo(event, 'Cart')">
+    <button id="addCart" class="body-button" type="button" class="block" onclick="selectedItems(); openInfo('Cart')">
       Add selected items to cart
     </button>
   </div>

@@ -2,7 +2,7 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
-function openInfo(evt, tabName) {
+function openInfo(tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
 	tabcontent = document.getElementsByClassName("tabcontent");
@@ -18,7 +18,6 @@ function openInfo(evt, tabName) {
 
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
 
 	const button = document.getElementById(tabName + "Tab");
 	button.classList.add("active");
@@ -134,3 +133,4 @@ function orderForLaterCheckbox(element) {
 
 // Preload default list
 populateListProductChoices(null);
+openInfo('PersonalData');
