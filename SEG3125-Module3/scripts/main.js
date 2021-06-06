@@ -95,7 +95,6 @@ function selectedItems() {
 	const productList = document.getElementsByName("product");
 	const chosenProducts = Array.from(productList).filter((checkbox) => checkbox.checked);
 	const chosenNames = chosenProducts.map((elem) => elem.value);
-	console.log(chosenNames)
 	window.localStorage.setItem("chosenNames", JSON.stringify(chosenNames));
 
 	const c = document.getElementById('displayCart');
@@ -147,7 +146,6 @@ function orderForLaterCheckbox(element) {
 
 function loadSelectedProducts() {
 	const chosenNames = JSON.parse(window.localStorage.getItem("chosenNames"));
-	console.log(chosenNames)
 
 	populateListProductChoices(null);
 
