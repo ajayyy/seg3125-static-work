@@ -39,10 +39,23 @@ body {
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
-  padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  padding: 0px 12px;
+
+  transition: 0.3s;
+}
+
+.tabParent {
+  overflow: hidden;
+  max-height: 0px;
+  
+  transition: 0.3s;
+}
+
+.tabcontent.visibleTab {
+  /* transform: scaleY(1); */
+  padding: 6px 12px;
 }
 
 #designedBy {

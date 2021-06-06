@@ -16,78 +16,82 @@
     <button id="PersonalDataTab" class="tablinks">Personal Data</button>
   </div>
 
-  <!-- Tab content -->
-  <div id="PersonalData" class="tabcontent">
-    <h3>Personal Data</h3>
-    <p>Tell us a bit about you</p>
-    
-    <div>
-      <label>
-        <input type="checkbox" id="noLactoseCheckbox" value="noLactose" onclick="populateListProductChoices(this)">
-        No Lactose
-      </label>
+  <div class="tabParent">
+    <div id="PersonalData" class="tabcontent">
+      <h3>Personal Data</h3>
+      <p>Tell us a bit about you</p>
+      
+      <div>
+        <label>
+          <input type="checkbox" id="noLactoseCheckbox" value="noLactose" onclick="populateListProductChoices(this)">
+          No Lactose
+        </label>
 
-      <br>
+        <br>
 
-      <label>
-        <input type="checkbox" id="noNutsCheckbox" value="noNuts" onclick="populateListProductChoices(this)">
-        No Nuts
-      </label>
+        <label>
+          <input type="checkbox" id="noNutsCheckbox" value="noNuts" onclick="populateListProductChoices(this)">
+          No Nuts
+        </label>
 
-      <br>
+        <br>
 
-      <label>
-        <input type="checkbox" id="organicCheckbox" value="organic" onclick="populateListProductChoices(this)">
-        Organic
-      </label>
+        <label>
+          <input type="checkbox" id="organicCheckbox" value="organic" onclick="populateListProductChoices(this)">
+          Organic
+        </label>
+      </div>
+      </select>
     </div>
-    </select>
   </div>
 
   <div class="tab" onclick="openInfo('Products')">
     <button id="ProductsTab" class="tablinks">Products</button>
   </div>
 
-  <div id="Products" class="tabcontent">
-    <h3>Your targeted products</h3>
-    <p>We preselected products based on your restrictions</p>
-    Choose items to buy:
-    <table id="displayProduct"></table>
-    <button id="addCart" class="body-button" type="button" class="block" onclick="selectedItems(); openInfo('Cart')">
-      Add selected items to cart
-    </button>
+  <div class="tabParent">
+    <div id="Products" class="tabcontent">
+      <h3>Your targeted products</h3>
+      <p>We preselected products based on your restrictions</p>
+      Choose items to buy:
+      <table id="displayProduct"></table>
+      <button id="addCart" class="body-button" type="button" class="block" onclick="selectedItems(); openInfo('Cart')">
+        Add selected items to cart
+      </button>
+    </div>
   </div>
 
   <div class="tab" onclick="openInfo('Cart')">
     <button id="CartTab" class="tablinks">Cart</button>
   </div>
 
-  <div id="Cart" class="tabcontent">
-    <h3>Cart</h3>
-    <p>Here is your cart</p>
-    <p id="emptyCart">Your cart is currently empty</p>
-    <div id="displayCart"></div>
+  <div class="tabParent">
+    <div id="Cart" class="tabcontent">
+      <h3>Cart</h3>
+      <p>Here is your cart</p>
+      <p id="emptyCart">Your cart is currently empty</p>
+      <div id="displayCart"></div>
+  
+      <label>
+        <input type="checkbox" id="noLactoseCheckbox" value="noLactose" onclick="orderForLaterCheckbox(this)">
+        Delay order
+      </label>
+  
+      <div id="order-for-later" class="hidden">
+        <input type="time" id="order-for-later-time" name="order-for-later-time" min="09:00" max="18:00" required>
+      </div>
 
-    <button id="curbside" class="body-button" type="button" class="block"">
-      Order for curbside pickup
-    </button>
+      <br/>
 
-    <button id="inStore" class="body-button" type="button" class="block"">
-      Order for in-store pickup
-    </button>
-
-    <br/>
-    <br/>
-
-    <label>
-      <input type="checkbox" id="noLactoseCheckbox" value="noLactose" onclick="orderForLaterCheckbox(this)">
-      Delay order
-    </label>
-
-    <div id="order-for-later" class="hidden">
-      <input type="time" id="order-for-later-time" name="order-for-later-time" min="09:00" max="18:00" required>
+      <button id="curbside" class="body-button" type="button" class="block"">
+        Order for curbside pickup
+      </button>
+  
+      <button id="inStore" class="body-button" type="button" class="block"">
+        Order for in-store pickup
+      </button>
+      
     </div>
-    
   </div>
 
   <div id="designedBy">
