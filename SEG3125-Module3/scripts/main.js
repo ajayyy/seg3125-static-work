@@ -91,11 +91,12 @@ function populateListProductChoices(checkbox) {
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
 
-function selectedItems(){
+function selectedItems() {
 	const productList = document.getElementsByName("product");
 	const chosenProducts = Array.from(productList).filter((checkbox) => checkbox.checked);
 	const chosenNames = chosenProducts.map((elem) => elem.value);
-	window.localStorage.setItem("chosenNames", chosenNames);
+	console.log(chosenNames)
+	window.localStorage.setItem("chosenNames", JSON.stringify(chosenNames));
 
 	const c = document.getElementById('displayCart');
 	c.innerHTML = "";
@@ -144,6 +145,22 @@ function orderForLaterCheckbox(element) {
 	}
 }
 
+function loadSelectedProducts() {
+	const chosenNames = JSON.parse(window.localStorage.getItem("chosenNames"));
+	console.log(chosenNames)
+
+	populateListProductChoices(null);
+
+	if (chosenNames.length > 0) {
+		const productList = document.getElementsByName("product");
+		for (const product of productList) {
+			product.checked = chosenNames.includes(product.value)
+		}
+
+		selectedItems();
+	}
+}
+
 // Preload default list
-populateListProductChoices(null);
+loadSelectedProducts();
 openInfo('PersonalData');
