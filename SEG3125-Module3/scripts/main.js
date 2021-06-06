@@ -40,6 +40,13 @@ function populateListProductChoices(checkbox) {
 		
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, checkbox);
+	if (!checkbox) {
+		// Load restrictions data into checkboxes
+		const checkboxes = document.querySelectorAll("#dietRestrictions > label > input");
+		for (const checkbox of checkboxes) {
+			checkbox.checked = restrictions[checkbox.value];
+		}
+	}
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
@@ -85,10 +92,12 @@ function populateListProductChoices(checkbox) {
 // We build a paragraph to contain the list of selected items, and the total price
 
 function selectedItems(){
-	var productList = document.getElementsByName("product");
-	var chosenProducts = Array.from(productList).filter((checkbox) => checkbox.checked);
+	const productList = document.getElementsByName("product");
+	const chosenProducts = Array.from(productList).filter((checkbox) => checkbox.checked);
+	const chosenNames = chosenProducts.map((elem) => elem.value);
+	window.localStorage.setItem("chosenNames", chosenNames);
 
-	var c = document.getElementById('displayCart');
+	const c = document.getElementById('displayCart');
 	c.innerHTML = "";
 
 	const emptyCart = document.getElementById("emptyCart");
@@ -100,7 +109,7 @@ function selectedItems(){
 	}
 	
 	// build list of selected item
-	var para = document.createElement("p");
+	const para = document.createElement("p");
 	para.innerHTML = "You selected: ";
 	para.appendChild(document.createElement("br"));
 	para.appendChild(document.createElement("br"));
@@ -122,7 +131,7 @@ function selectedItems(){
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts.map((elem) => elem.value)).toFixed(2)));
+	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenNames).toFixed(2)));
 }
 
 function orderForLaterCheckbox(element) {

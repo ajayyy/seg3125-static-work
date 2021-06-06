@@ -125,19 +125,24 @@ var products = [
 	}
 ];
 
-const restrictions = {
+let restrictions = {
 	noLactose: false,
 	noNuts: false,
 	organic: false
 }
-	
-
+if (localStorage.getItem("restrictions")) {
+	try {
+		restrictions = JSON.parse(localStorage.getItem("restrictions"));
+	} catch(e) {}
+}
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
 function restrictListProducts(prods, checkbox) {
 	if (checkbox) restrictions[checkbox.value] = checkbox.checked;
+	window.localStorage.setItem("restrictions", JSON.stringify(restrictions));
+
 	return prods.filter((elem) => (!restrictions.noLactose || elem.noLactose)
 									&& (!restrictions.noNuts || elem.noNuts)
 									&& (!restrictions.organic || elem.organic))
