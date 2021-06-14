@@ -1,0 +1,191 @@
+<!doctype html>
+<!-- Here is a link to the code the documents this code is based on
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+This will help you get started with your code!
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+
+    <title>JeromoVet Veterinary Clinic</title>
+</head>
+<body class="bg-dark">
+<div class="container-lg">
+
+    <nav class="navbar text-white p-3 my-3 justify-content-center ">
+        <h1><img src="images/logo.png" width="130" height="130"> JeromoVet Veterinary Clinic</h1>
+    </nav>
+
+    <div class="p-3 my-3 border bg-light">
+        <h1 class="">About JeromoVet</h1>
+
+        <p class="p-4 my-3">
+            Jeromovet is a veterinary clinic located at 225 Donald St, Ottawa, focusing on specialist surgical procedures.
+        </p>
+    </div>
+
+    <div class=" p-3 my-3 bg-secondary">
+        <h1 class="text-light">Services</h1>
+
+        <div id="services">
+            <div class="row justify-content-around">
+                <div class="card">
+                    <img src="images/smallanimalcare.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Small Animal Care ($1,002)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/largeanimalcare.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Large Animal Care ($2,049)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <img src="images/orthopedics.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Orthopedics ($4,103)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/surgery.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Surgery ($10,294)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/cancercare.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Cancer Care ($13,131)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/endoflife.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">End of life ($19,102)</p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerForToService" tabindex="-1" aria-labelledby="registerForToService" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register for service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>When would you like to book this appointment?</h6>
+
+                    <input type="date">
+                    <input type="time">
+
+                    <br/>
+                    <br/>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <h6>How can we contact you?</h6>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Email:
+                            </td>
+                            <td>
+                                <input type="email" placeholder="you@example.com">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Phone number:
+                            </td>
+
+                            <td>
+                                <input type="tel" placeholder="(123)-456-789">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 my-3 bg-secondary">
+        <h1 class="text-light">Who are we?</h1>
+
+        <div class="row justify-content-around">
+            <div class="card">
+                <img src="images/johnmiller.jpg" class="card-img-top" alt="John Miller">
+                <div class="card-body">
+                    <p class="card-text">John Miller is a doctor from Halifax with 28 years of experience in animal surgery</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/ginaharris.jpg" class="card-img-top" alt="Gina Harris">
+                <div class="card-body">
+                    <p class="card-text">Gina Harris is a doctor who specialises with cancer care with 15 years of experience</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/emilythomas.jpg" class="card-img-top" alt="Emily Thomas">
+                <div class="card-body">
+                    <p class="card-text">Emily Thomas is a veterinary anesthesiologists who makes sure your pets get to sleep in the most comfortable state. She has over 18 years of experience and trained at Ontario Veterinary College in Guelph</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="text-light" style="padding-bottom: 10px;">
+        ©JeromoVet 2021 | Find us at 225 Donald St, Ottawa
+    </div>
+
+</div>
+<!-- here we input our javascript helper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
