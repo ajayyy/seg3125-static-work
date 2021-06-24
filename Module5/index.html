@@ -13,6 +13,15 @@ This will help you get started with your code!
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
 
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="scripts/script.js"></script>
+
     <title>JeromoVet Veterinary Clinic</title>
 </head>
 <body class="bg-dark">
@@ -111,44 +120,85 @@ This will help you get started with your code!
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>When would you like to book this appointment?</h6>
+                    <div class="page">
+                        <h6>When would you like to book this appointment?</h6>
 
-                    <input type="date">
-                    <input type="time">
+                        <input type="date">
+                        <input type="time">
+    
+                        <br/>
+                        <br/>
+    
+                        <table>
+                            <tr>
+                                <td>
+                                    <h6>How can we contact you?</h6>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                    <input type="email" placeholder="you@example.com">
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>
+                                    Phone number:
+                                </td>
+    
+                                <td>
+                                    <input type="tel" placeholder="(123)-456-789">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
 
-                    <br/>
-                    <br/>
+                    <div class="page hidden">
+                        <h6>2When would you like to book this appointment?</h6>
 
-                    <table>
-                        <tr>
-                            <td>
-                                <h6>How can we contact you?</h6>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                Email:
-                            </td>
-                            <td>
-                                <input type="email" placeholder="you@example.com">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                Phone number:
-                            </td>
-
-                            <td>
-                                <input type="tel" placeholder="(123)-456-789">
-                            </td>
-                        </tr>
-                    </table>
+                        <input type="date">
+                        <input type="time">
+    
+                        <br/>
+                        <br/>
+    
+                        <table>
+                            <tr>
+                                <td>
+                                    <h6>How can we contact you?</h6>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                    <input type="email" placeholder="you@example.com">
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>
+                                    Phone number:
+                                </td>
+    
+                                <td>
+                                    <input type="tel" placeholder="(123)-456-789">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Register</button>
+                    <button type="button" class="previousBtn hidden btn btn-primary">Previous</button>
+                    <button type="button" class="nextBtn btn btn-primary">Next</button>
+                    <button type="button" class="registerBtn hidden btn btn-primary" data-bs-dismiss="modal">Register</button>
                 </div>
             </div>
         </div>
