@@ -1,6 +1,5 @@
 function init() {
     const modalBodies = document.querySelectorAll(".modal");
-    console.log(modalBodies)
 
     for (const modalBody of modalBodies) {
         const pages = modalBody.querySelectorAll(".page");
