@@ -1,34 +1,43 @@
 function init() {
     $(".modal").each((i, modalBody) => {
         const pages = modalBody.querySelectorAll(".page");
+        const closeBtn = modalBody.querySelector(".closeBtn");
         const previousBtn = modalBody.querySelector(".previousBtn");
         const nextBtn = modalBody.querySelector(".nextBtn");
         const registerBtn = modalBody.querySelector(".registerBtn");
+
+        const storedInfo = {};
 
         let currentPage = 0;
 
         updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
         previousBtn.addEventListener("click", () => {
             currentPage--;
-            updateModalPages(currentPage, pages);
+            updateModalPages(currentPage, pages, storedInfo);
             updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
         });
         nextBtn.addEventListener("click", () => {
-            if (validate(currentPage, pages)) {
+            if (validate(currentPage, pages, storedInfo)) {
                 currentPage++;
             }
-            updateModalPages(currentPage, pages);
+            updateModalPages(currentPage, pages, storedInfo);
             updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
         });
         registerBtn.addEventListener("click", () => {
-            if (validate(currentPage, pages)) {
-                $(modalBody).modal("hide");
+            if (validate(currentPage, pages, storedInfo)) {
+                currentPage++
             }
+
+            updateModalPages(currentPage, pages, storedInfo);
+            updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
+        });
+        closeBtn.addEventListener("click", () => {
+            currentPage = 0;
         });
     })
 }
 
-function validate(currentPage, pages) {
+function validate(currentPage, pages, storedInfo) {
     switch (currentPage) {
         case 0:
             const phoneNumber = pages[currentPage].querySelector("#phone");
@@ -42,9 +51,13 @@ function validate(currentPage, pages) {
                 alert("Email is invalid");
                 return false;
             }
+
+            storedInfo.expert = $(pages[currentPage]).find("#experts").val();
+            storedInfo.time = $(pages[currentPage]).find("#time").val();
+            storedInfo.date = $(pages[currentPage]).find("#date").val();
     
             return true;
-        default:
+        case 1:
             const cardNumber = pages[currentPage].querySelector("#card-number");
             if (!cardNumber.value.match(/^(?:\d{4} ?){4}$/)) {
                 alert("Credit card number is invalid");
@@ -56,12 +69,12 @@ function validate(currentPage, pages) {
                 alert("CCV number is invalid");
                 return false;
             }
-
+        default:
             return true;
     }
 }
 
-function updateModalPages(currentPage, pages) {
+function updateModalPages(currentPage, pages, storedInfo) {
     for (let i = 0; i < pages.length; i++) {
         if (currentPage !== i) {
             pages[i].classList.add("hidden");
@@ -69,13 +82,22 @@ function updateModalPages(currentPage, pages) {
             pages[i].classList.remove("hidden");
         }
     }
+
+    if (currentPage == pages.length - 1) {
+        $(pages[currentPage]).find("#registration-information")
+            .text(`You booked with ${storedInfo.expert} at ${storedInfo.time} on ${storedInfo.date}`);
+    }
 }
 
 function updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn) {
-    if (currentPage === pages.length - 1) {
+    if (currentPage === pages.length - 2) {
         previousBtn.classList.remove("hidden");
         nextBtn.classList.add("hidden");
         registerBtn.classList.remove("hidden");
+    } else if (currentPage === pages.length - 1) {
+        previousBtn.classList.add("hidden");
+        nextBtn.classList.add("hidden");
+        registerBtn.classList.add("hidden");
     } else {
         if (currentPage === 0) {
             previousBtn.classList.add("hidden");
