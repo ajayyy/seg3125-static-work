@@ -1,7 +1,5 @@
 function init() {
-    const modalBodies = document.querySelectorAll(".modal");
-
-    for (const modalBody of modalBodies) {
+    $(".modal").each((i, modalBody) => {
         const pages = modalBody.querySelectorAll(".page");
         const previousBtn = modalBody.querySelector(".previousBtn");
         const nextBtn = modalBody.querySelector(".nextBtn");
@@ -16,10 +14,50 @@ function init() {
             updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
         });
         nextBtn.addEventListener("click", () => {
-            currentPage++;
+            if (validate(currentPage, pages)) {
+                currentPage++;
+            }
             updateModalPages(currentPage, pages);
             updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBtn);
         });
+        registerBtn.addEventListener("click", () => {
+            if (validate(currentPage, pages)) {
+                $(modalBody).modal("hide");
+            }
+        });
+    })
+}
+
+function validate(currentPage, pages) {
+    switch (currentPage) {
+        case 0:
+            const phoneNumber = pages[currentPage].querySelector("#phone");
+            if (!phoneNumber.value.match(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)) { // Regex from https://stackoverflow.com/a/16699507/1985387
+                alert("Phone number is invalid");
+                return false;
+            }
+
+            const email = pages[currentPage].querySelector("#email");
+            if (!email.value.match(/.+\@.+\..+/)) { // Regex from https://www.wired.com/2008/08/four-regular-expressions-to-check-email-addresses/
+                alert("Email is invalid");
+                return false;
+            }
+    
+            return true;
+        default:
+            const cardNumber = pages[currentPage].querySelector("#card-number");
+            if (!cardNumber.value.match(/^(?:\d{4} ?){4}$/)) {
+                alert("Credit card number is invalid");
+                return false;
+            }
+
+            const ccv = pages[currentPage].querySelector("#ccv");
+            if (ccv.value.length !== 3) {
+                alert("CCV number is invalid");
+                return false;
+            }
+
+            return true;
     }
 }
 
@@ -50,4 +88,4 @@ function updateModalButtons(currentPage, pages, previousBtn, nextBtn, registerBt
     }
 }
 
-window.addEventListener('load', init);
+$(init);
