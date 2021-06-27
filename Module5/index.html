@@ -25,271 +25,292 @@ This will help you get started with your code!
     <title>JeromoVet Veterinary Clinic</title>
 </head>
 <body class="bg-dark">
-<div class="container-lg">
 
-    <nav class="navbar text-white p-3 my-3 justify-content-center ">
-        <h1><img src="images/logo.png" width="130" height="130"> JeromoVet Veterinary Clinic</h1>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo" style="height:30px;">JeromaVet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><img src="images/info_white_24dp.svg" alt="About" style="height:30px;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services-container"><img src="images/app_registration_white_24dp.svg" alt="Services" style="height:30px;">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#who-are-we"><img src="images/people_white_24dp.svg" alt="Who are we?" style="height:30px;">Who are we?</img></a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="p-3 my-3 border bg-light">
-        <h1 class="">About JeromoVet</h1>
+    <div class="container-lg">
 
-        <p class="p-4 my-3">
-            Jeromovet is a veterinary clinic located at 225 Donald St, Ottawa, focusing on specialist surgical procedures.
-        </p>
-    </div>
+        <nav class="navbar text-white p-3 my-3 justify-content-center ">
+            <h1><img src="images/logo.png" width="130" height="130"> JeromoVet Veterinary Clinic</h1>
+        </nav>
 
-    <div class=" p-3 my-3 bg-secondary">
-        <h1 class="text-light">Services</h1>
+        <div id="about" class="p-3 my-3 border bg-light">
+            <h1 class="">About JeromoVet</h1>
 
-        <div id="services">
+            <p class="p-4 my-3">
+                Jeromovet is a veterinary clinic located at 225 Donald St, Ottawa, focusing on specialist surgical procedures.
+            </p>
+        </div>
+
+        <div id="services-container" class=" p-3 my-3 bg-secondary">
+            <h1 class="text-light">Services</h1>
+
+            <div id="services">
+                <div class="row justify-content-around">
+                    <div class="card">
+                        <img src="images/smallanimalcare.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Small Animal Care ($1,002)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/largeanimalcare.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Large Animal Care ($2,049)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <img src="images/orthopedics.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Orthopedics ($4,103)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/surgery.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Surgery ($10,294)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/cancercare.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Cancer Care ($13,131)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/endoflife.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">End of life ($19,102)</p>
+
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="registerForToService" tabindex="-1" aria-labelledby="registerForToService" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register for service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="page">
+                            <h6>Which expert would you like to book with?</h6>
+
+                            <select name="experts" id="experts">
+                                <option value="John Miller">John Miller</option>
+                                <option value="Gina Harris">Gina Harris</option>
+                                <option value="Emily Thomas">Emily Thomas</option>
+                            </select>
+
+                            <br/>
+                            <br/>
+
+                            <h6>When would you like to book this appointment?</h6>
+
+                            <div style="font-size: 12px;">Please book a time between 9 am and 5 pm</div>
+
+                            <input id="date">
+                            <input id="time" type="time">
+        
+                            <br/>
+                            <br/>
+        
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h6>How can we contact you?</h6>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td>
+                                        Email:
+                                    </td>
+                                    <td>
+                                        <input id="email" type="email" placeholder="you@example.com">
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td>
+                                        Phone number:
+                                    </td>
+        
+                                    <td>
+                                        <input id="phone" type="tel" placeholder="(123) 456-789">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="page hidden">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h6>How will you pay?</h6>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Name:
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="John Smith">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Card Number:
+                                    </td>
+                                    <td>
+                                        <input id="card-number" type="text" placeholder="0123 4567 8910 1112">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-size: 12px;">
+                                        Credit card information is used in case of a no-show to charge a fee of $45
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Expiry:
+                                    </td>
+                                    <td>
+                                        <input type="number" placeholder="MM/YY">
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td>
+                                        CCV:
+                                    </td>
+        
+                                    <td>
+                                        <input id="ccv" type="number" placeholder="123">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="page hidden">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h6>Success!</h6>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Your registration has complete.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div id="registration-information">
+                                    
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="closeBtn btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="previousBtn hidden btn btn-primary">Previous</button>
+                        <button type="button" class="nextBtn btn btn-primary">Next</button>
+                        <button type="button" class="registerBtn hidden btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="who-are-we" class="p-3 my-3 bg-secondary">
+            <h1 class="text-light">Who are we?</h1>
+
             <div class="row justify-content-around">
                 <div class="card">
-                    <img src="images/smallanimalcare.jpg" class="card-img-top" alt="">
+                    <img src="images/johnmiller.jpg" class="card-img-top" alt="John Miller">
                     <div class="card-body">
-                        <p class="card-text">Small Animal Care ($1,002)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
+                        <p class="card-text">John Miller is a doctor from Halifax with 28 years of experience in animal surgery</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/largeanimalcare.jpg" class="card-img-top" alt="">
+                    <img src="images/ginaharris.jpg" class="card-img-top" alt="Gina Harris">
                     <div class="card-body">
-                        <p class="card-text">Large Animal Care ($2,049)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
-                    </div>
-                </div>
-        
-                <div class="card">
-                    <img src="images/orthopedics.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="card-text">Orthopedics ($4,103)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
+                        <p class="card-text">Gina Harris is a doctor who specialises with cancer care with 15 years of experience</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="images/surgery.jpg" class="card-img-top" alt="">
+                    <img src="images/emilythomas.jpg" class="card-img-top" alt="Emily Thomas">
                     <div class="card-body">
-                        <p class="card-text">Surgery ($10,294)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="images/cancercare.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="card-text">Cancer Care ($13,131)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="images/endoflife.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="card-text">End of life ($19,102)</p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerForToService">
-                            Register
-                        </button>
+                        <p class="card-text">Emily Thomas is a veterinary anesthesiologists who makes sure your pets get to sleep in the most comfortable state. She has over 18 years of experience and trained at Ontario Veterinary College in Guelph</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="registerForToService" tabindex="-1" aria-labelledby="registerForToService" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register for service</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="page">
-                        <h6>Which expert would you like to book with?</h6>
-
-                        <select name="experts" id="experts">
-                            <option value="John Miller">John Miller</option>
-                            <option value="Gina Harris">Gina Harris</option>
-                            <option value="Emily Thomas">Emily Thomas</option>
-                        </select>
-
-                        <br/>
-                        <br/>
-
-                        <h6>When would you like to book this appointment?</h6>
-
-                        <div style="font-size: 12px;">Please book a time between 9 am and 5 pm</div>
-
-                        <input id="date">
-                        <input id="time" type="time">
-    
-                        <br/>
-                        <br/>
-    
-                        <table>
-                            <tr>
-                                <td>
-                                    <h6>How can we contact you?</h6>
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td>
-                                    Email:
-                                </td>
-                                <td>
-                                    <input id="email" type="email" placeholder="you@example.com">
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td>
-                                    Phone number:
-                                </td>
-    
-                                <td>
-                                    <input id="phone" type="tel" placeholder="(123) 456-789">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="page hidden">
-                        <table>
-                            <tr>
-                                <td>
-                                    <h6>How will you pay?</h6>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    Name:
-                                </td>
-                                <td>
-                                    <input type="text" placeholder="John Smith">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    Card Number:
-                                </td>
-                                <td>
-                                    <input id="card-number" type="text" placeholder="0123 4567 8910 1112">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td style="font-size: 12px;">
-                                    Credit card information is used in case of a no-show to charge a fee of $45
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    Expiry:
-                                </td>
-                                <td>
-                                    <input type="number" placeholder="MM/YY">
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td>
-                                    CCV:
-                                </td>
-    
-                                <td>
-                                    <input id="ccv" type="number" placeholder="123">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="page hidden">
-                        <table>
-                            <tr>
-                                <td>
-                                    <h6>Success!</h6>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    Your registration has complete.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <div id="registration-information">
-                                
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="closeBtn btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="previousBtn hidden btn btn-primary">Previous</button>
-                    <button type="button" class="nextBtn btn btn-primary">Next</button>
-                    <button type="button" class="registerBtn hidden btn btn-primary">Register</button>
-                </div>
-            </div>
+        <div id="footer" class="text-light" style="padding-bottom: 10px;">
+            ©JeromoVet 2021 | Find us at 225 Donald St, Ottawa
         </div>
+
     </div>
-
-    <div class="p-3 my-3 bg-secondary">
-        <h1 class="text-light">Who are we?</h1>
-
-        <div class="row justify-content-around">
-            <div class="card">
-                <img src="images/johnmiller.jpg" class="card-img-top" alt="John Miller">
-                <div class="card-body">
-                    <p class="card-text">John Miller is a doctor from Halifax with 28 years of experience in animal surgery</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/ginaharris.jpg" class="card-img-top" alt="Gina Harris">
-                <div class="card-body">
-                    <p class="card-text">Gina Harris is a doctor who specialises with cancer care with 15 years of experience</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/emilythomas.jpg" class="card-img-top" alt="Emily Thomas">
-                <div class="card-body">
-                    <p class="card-text">Emily Thomas is a veterinary anesthesiologists who makes sure your pets get to sleep in the most comfortable state. She has over 18 years of experience and trained at Ontario Veterinary College in Guelph</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="footer" class="text-light" style="padding-bottom: 10px;">
-        ©JeromoVet 2021 | Find us at 225 Donald St, Ottawa
-    </div>
-
-</div>
-<!-- here we input our javascript helper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- here we input our javascript helper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

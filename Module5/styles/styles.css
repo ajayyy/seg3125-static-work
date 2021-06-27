@@ -10,3 +10,12 @@
 .select {
     font-size: 15px;
 }
+
+.navbar-brand {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar img {
+    padding-right: 10px;
+}
