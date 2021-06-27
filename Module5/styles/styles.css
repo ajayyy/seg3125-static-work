@@ -19,3 +19,14 @@
 .navbar img {
     padding-right: 10px;
 }
+
+.sticky {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#main-container {
+    margin-top: 60px;
+}
