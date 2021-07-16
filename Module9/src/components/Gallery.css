@@ -1,0 +1,6 @@
+.gallery-div {
+    /* Flex horizontal with spacing */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
