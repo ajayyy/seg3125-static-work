@@ -7,6 +7,8 @@ import ThemePreview from './components/ThemePreview';
 function App() {
   return (
     <div className="App">
+      <h1 style={{fontSize: "55px"}}>Themeorama</h1>
+
       {/* <Gallery /> */}
       <ThemePreview 
           image="none"
