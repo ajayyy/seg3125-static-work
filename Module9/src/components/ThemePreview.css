@@ -8,8 +8,14 @@
 
 .theme-preview-right {
     flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 40px;
+    margin-left: 40px;
 }
 
 .theme-preview-image {
-    width: 250px;
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
 }

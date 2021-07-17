@@ -11,14 +11,14 @@ function App() {
       <h1 style={{fontSize: "55px"}}>Themeorama</h1>
 
       {/* <Gallery /> */}
-      {/* <ThemePreview 
-          image="none"
+      <ThemePreview 
+          image={`wallpapers/wallpaper${Math.ceil(Math.random() * 6)}.jpg`}
           name={"Theme 1"}
           rating={Math.ceil(Math.random() * 10)}
           categoryIcon={faGamepad}
-          category={"Gaming"} /> */}
+          category={"Gaming"} />
 
-      <SearchPage/>
+      {/* <SearchPage/> */}
     </div>
   );
 }

@@ -16,7 +16,7 @@ function getThemeThumbnails() {
         elements.push(
             <ThemeThumbnail 
                 key={i}
-                image="none"
+                image={`wallpapers/wallpaper${Math.ceil(Math.random() * 6)}.jpg`}
                 name={"Theme " + (i + 1)}
                 rating={Math.ceil(Math.random() * 10)}
                 categoryIcon={faGamepad}
