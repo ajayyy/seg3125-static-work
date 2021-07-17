@@ -4,6 +4,7 @@ import Gallery from "./components/Gallery";
 import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 import ThemePreview from './components/ThemePreview';
 import SearchPage from './components/SearchPage';
+import SubmitPage from './components/SubmitPage';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           categoryIcon={faGamepad}
           category={"Gaming"} /> */}
 
-      <SearchPage/>
+      {/* <SearchPage/> */}
+
+      <SubmitPage/>
     </div>
   );
 }
