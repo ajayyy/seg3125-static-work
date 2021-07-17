@@ -16,6 +16,11 @@ function SearchPage(props) {
                     aria-label="Search"
                     aria-describedby="search-addon" />
             </InputGroup>
+
+            <div className="colors">
+                {"Preferred Colour "}
+                <input type="color"/>
+            </div>
             
             <Gallery />
         </div>
