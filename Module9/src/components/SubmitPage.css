@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 .submit-page-top {
     display: flex;
     flex-direction: row;
@@ -22,6 +26,12 @@
     width: 600px;
     height: 400px;
     object-fit: cover;
+}
+
+.theme-preview-image {
+    width: 550px;
+    height: 360px;
+    margin: auto;
 }
 
 .submit-preview-image {
