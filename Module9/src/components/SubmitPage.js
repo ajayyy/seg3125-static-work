@@ -23,6 +23,10 @@ function SubmitPage(props) {
                         {` Main colour`}
                     </div>
                     <div className="submit-preview-colour">
+                        <input type="color" id="second-color"/>
+                        {` Secondary colour`}
+                    </div>
+                    <div className="submit-preview-colour">
                         <input type="color" id="accent-color"/>
                         {` Accent colour`}
                     </div>
@@ -66,9 +70,11 @@ function fileDropped(e) {
                 const topColours = findTopColours(imageElement);
                 const colour1 = topColours[0].allColours[0];
                 const colour2 = topColours[1]?.allColours[0];
+                const colour3 = topColours[2]?.allColours[0];
 
                 if (colour1) document.getElementById("main-color").value = rgbaToHex(colour1);
-                if (colour2) document.getElementById("accent-color").value = rgbaToHex(colour2);
+                if (colour2) document.getElementById("second-color").value = rgbaToHex(colour2);
+                if (colour3) document.getElementById("accent-color").value = rgbaToHex(colour3);
             }
 
             imageElement.src = reader.result;
