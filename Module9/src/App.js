@@ -52,8 +52,13 @@ function getPage() {
 
 function pageChange(page) {
   setState(prevState => ({page}));
+  window.history.pushState({page}, null);
 }
 
+window.onpopstate = (event) => {
+  console.log(event)
+  setState(prevState => ({page: event.state?.page || home}));
+};
 
 
 export default App;
