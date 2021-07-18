@@ -11,11 +11,11 @@ function ThemeThumbnail(props) {
             </div>
             <div className="theme-rating">
                 <FontAwesomeIcon icon={faStar} />
-                {`${props.rating}/10`}
+                {` ${props.rating}/10`}
             </div>
             <div className="theme-category">
                 <FontAwesomeIcon icon={props.categoryIcon} />
-                {props.category}
+                {` ${props.category}`}
             </div>
         </div>
     );

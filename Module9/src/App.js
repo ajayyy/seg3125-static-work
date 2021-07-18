@@ -21,17 +21,6 @@ function App() {
 
       { getPage() }
 
-      {/* <Gallery /> */}
-      {/* <ThemePreview 
-          image={`wallpapers/wallpaper${Math.ceil(Math.random() * 6)}.jpg`}
-          name={"Theme 1"}
-          rating={Math.ceil(Math.random() * 10)}
-          categoryIcon={faGamepad}
-          category={"Gaming"} /> */}
-
-      {/* <SearchPage/> */}
-
-      {/* <SubmitPage/> */}
     </div>
   );
 }

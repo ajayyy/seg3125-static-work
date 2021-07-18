@@ -3,8 +3,13 @@ import Gallery from "./Gallery";
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
 
 function SearchPage(props) {
+    const [state, setState] = useState({
+        search: ""
+    });
+
     return (
         <div className="search-page">
             <InputGroup className="mb-3" id="searchBox">
@@ -14,7 +19,8 @@ function SearchPage(props) {
                 <FormControl
                     placeholder="Search"
                     aria-label="Search"
-                    aria-describedby="search-addon" />
+                    aria-describedby="search-addon"
+                    onChange={(e) => setState({search: e.target.value})} />
             </InputGroup>
 
             <div className="colors">
@@ -22,7 +28,8 @@ function SearchPage(props) {
                 <input type="color"/>
             </div>
             
-            <Gallery />
+            <Gallery
+                search={state.search} />
 
             <Button variant="primary" onClick={() => props.pageChange('submit')}>Create your own</Button>
         </div>

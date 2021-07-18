@@ -47,25 +47,26 @@ const themes = [
     }
 ];
 
-function Gallery() {
+function Gallery(props) {
     return (
         <div className="gallery-div">
-            {getThemeThumbnails()}
+            {getThemeThumbnails(props.search)}
         </div>
     );
 }
 
-function getThemeThumbnails() {
+function getThemeThumbnails(search) {
     const elements = [];
-    for (let i = 0; i < 3; i++) {
+    const foundThemes = themes.filter(theme => theme.name.toLowerCase().includes(search.toLowerCase()));
+    for (let i = 0; i < foundThemes.length; i++) {
         elements.push(
             <ThemeThumbnail 
                 key={i}
-                image={themes[i].image}
-                name={themes[i].name}
-                rating={themes[i].rating}
-                categoryIcon={themes[i].categoryIcon}
-                category={themes[i].category} />
+                image={foundThemes[i].image}
+                name={foundThemes[i].name}
+                rating={foundThemes[i].rating}
+                categoryIcon={foundThemes[i].categoryIcon}
+                category={foundThemes[i].category} />
         );
     }
 
