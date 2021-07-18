@@ -38,7 +38,7 @@ function SubmitPage(props) {
 
             <div className="theme-preview-name">
                 <InputGroup className="mb-3" id="nameBox">
-                    <InputGroup.Text id="search-addon">
+                    <InputGroup.Text id="name-addon">
                         <FontAwesomeIcon icon={faTag} /> 
                     </InputGroup.Text>
                     <FormControl

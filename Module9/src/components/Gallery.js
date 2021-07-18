@@ -1,21 +1,21 @@
 import './Gallery.css';
 import ThemeThumbnail from "./ThemeThumbnail";
-import { faGamepad } from '@fortawesome/free-solid-svg-icons'
+import { faGamepad, faFan, faShapes } from '@fortawesome/free-solid-svg-icons'
 
 const themes = [
     {
         name: "The moon",
         image: "wallpapers/wallpaper1.jpg",
         rating: 10,
-        category: "Gaming",
-        categoryIcon: faGamepad
+        category: "Nature",
+        categoryIcon: faFan
     },
     {
         name: "Chaos Next",
         image: "wallpapers/wallpaper2.jpg",
         rating: 9,
-        category: "Gaming",
-        categoryIcon: faGamepad
+        category: "Abstract",
+        categoryIcon: faShapes
     },
     {
         name: "Pasata",
@@ -35,15 +35,15 @@ const themes = [
         name: "Fun",
         image: "wallpapers/wallpaper5.jpg",
         rating: 6,
-        category: "Gaming",
-        categoryIcon: faGamepad
+        category: "Abstract",
+        categoryIcon: faShapes
     },
     {
         name: "Oslwop",
         image: "wallpapers/wallpaper6.jpg",
         rating: 9,
-        category: "Gaming",
-        categoryIcon: faGamepad
+        category: "Abstract",
+        categoryIcon: faShapes
     }
 ];
 
