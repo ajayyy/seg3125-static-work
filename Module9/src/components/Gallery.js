@@ -50,12 +50,12 @@ const themes = [
 function Gallery(props) {
     return (
         <div className="gallery-div">
-            {getThemeThumbnails(props.search)}
+            {getThemeThumbnails(props, props.search)}
         </div>
     );
 }
 
-function getThemeThumbnails(search) {
+function getThemeThumbnails(props, search) {
     const elements = [];
     const foundThemes = themes.filter(theme => theme.name.toLowerCase().includes(search.toLowerCase()));
     for (let i = 0; i < foundThemes.length; i++) {
@@ -66,7 +66,8 @@ function getThemeThumbnails(search) {
                 name={foundThemes[i].name}
                 rating={foundThemes[i].rating}
                 categoryIcon={foundThemes[i].categoryIcon}
-                category={foundThemes[i].category} />
+                category={foundThemes[i].category}
+                onClick={() => props.pageChange("themePreview", foundThemes[i])} />
         );
     }
 

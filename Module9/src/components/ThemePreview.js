@@ -17,11 +17,11 @@ function ThemePreview(props) {
                 </div>
                 <div className="theme-preview-rating">
                     <FontAwesomeIcon icon={faStar} />
-                    {`${props.rating}/10`}
+                    {` ${props.rating}/10`}
                 </div>
                 <div className="theme-preview-category">
                     <FontAwesomeIcon icon={props.categoryIcon} />
-                    {props.category}
+                    {` ${props.category}`}
                 </div>
             </div>
         </div>

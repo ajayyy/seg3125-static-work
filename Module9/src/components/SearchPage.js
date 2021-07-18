@@ -29,7 +29,8 @@ function SearchPage(props) {
             </div>
             
             <Gallery
-                search={state.search} />
+                search={state.search}
+                pageChange={props.pageChange} />
 
             <Button variant="primary" onClick={() => props.pageChange('submit')}>Create your own</Button>
         </div>

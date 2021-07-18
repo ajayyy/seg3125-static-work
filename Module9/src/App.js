@@ -7,7 +7,7 @@ import SearchPage from './components/SearchPage';
 import SubmitPage from './components/SubmitPage';
 import React, { useState } from 'react';
 
-const home = 'home', search = 'search', submit = 'submit';
+const home = 'home', search = 'search', submit = 'submit', themePreview = 'themePreview';
 let state, setState;
 
 function App() {
@@ -34,19 +34,27 @@ function getPage() {
     case submit:
       return <SubmitPage
               pageChange={pageChange} />;
+    case themePreview:
+      return <ThemePreview
+              image={state.theme.image}
+              name={state.theme.name}
+              rating={state.theme.rating}
+              categoryIcon={state.theme.categoryIcon}
+              category={state.theme.category}
+              pageChange={pageChange} />;
     default:
       return null;
   }
 }
 
-function pageChange(page) {
-  setState(prevState => ({page}));
-  window.history.pushState({page}, null);
+function pageChange(page, theme) {
+  setState(prevState => ({page, theme}));
+  window.history.pushState({page, theme}, null);
 }
 
 window.onpopstate = (event) => {
   console.log(event)
-  setState(prevState => ({page: event.state?.page || home}));
+  setState(prevState => ({page: event.state?.page || home, theme: event.state?.theme}));
 };
 
 
