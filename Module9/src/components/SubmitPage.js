@@ -6,7 +6,10 @@ import { InputGroup, FormControl, Button } from 'react-bootstrap';
 function SubmitPage(props) {
     return (
         <div className="submit-page">
+
             <div className="submit-page-top">
+                <Button variant="primary" className="backButton" onClick={() => props.pageChange('home')}>{"<"}</Button>
+
                 {/* Left panel */}
                 <div className="submit-preview-image" onDrop={(e) => fileDropped(e)}  onDragOver={(e) => fileDragOver(e)}>
                     <img id="theme-preview-image" className="theme-preview-image hidden" src={props.image} alt={props.name} />

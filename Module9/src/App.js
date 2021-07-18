@@ -12,7 +12,7 @@ let state, setState;
 
 function App() {
   [state, setState] = useState({
-    page: search
+    page: home
   });
 
   return (
@@ -39,8 +39,6 @@ function App() {
 function getPage() {
   switch (state.page) {
     case home:
-      return <Gallery
-              pageChange={pageChange} />;
     case search:
       return <SearchPage
               pageChange={pageChange} />;
