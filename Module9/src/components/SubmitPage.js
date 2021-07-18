@@ -11,18 +11,20 @@ function SubmitPage(props) {
                 <div className="submit-preview-image" onDrop={(e) => fileDropped(e)}  onDragOver={(e) => fileDragOver(e)}>
                     <img id="theme-preview-image" className="theme-preview-image hidden" src={props.image} alt={props.name} />
                     <input type="file" className="hidden" id="theme-preview-upload"/>
-                    {"Drag an image or click to upload"}
+                    <div id="upload-text">
+                        {"Drag an image to upload"}
+                    </div>
                 </div>
 
                 {/* Right panel */}
                 <div className="submit-preview-right">
                     <div className="submit-preview-colour">
                         <input type="color" id="main-color"/>
-                        {`Main colour`}
+                        {` Main colour`}
                     </div>
                     <div className="submit-preview-colour">
                         <input type="color" id="accent-color"/>
-                        {`Accent colour`}
+                        {` Accent colour`}
                     </div>
                 </div>
             </div>
@@ -56,6 +58,8 @@ function fileDropped(e) {
         const reader = new FileReader();
 
         reader.onloadend = () => {
+            document.getElementById("upload-text").classList.add("hidden");
+
             const imageElement = document.getElementById('theme-preview-image');
             imageElement.classList.remove('hidden');
             imageElement.onload = () => {
