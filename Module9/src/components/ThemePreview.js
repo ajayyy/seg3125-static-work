@@ -1,10 +1,14 @@
 import './ThemePreview.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
 function ThemePreview(props) {
     return (
         <div className="theme-preview">
+
+            <Button variant="primary" className="backButton" onClick={() => props.pageChange('home')}>{"<"}</Button>
+
             {/* left panel */}
             <div>
                 <img className="theme-preview-image" src={props.image} alt={props.name} />

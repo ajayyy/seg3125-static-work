@@ -19,3 +19,8 @@
     height: 400px;
     object-fit: cover;
 }
+
+.backButton {
+    margin: 15px;
+    height: 100%;
+}

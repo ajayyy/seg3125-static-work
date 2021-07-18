@@ -6,6 +6,7 @@ function ThemeThumbnail(props) {
     return (
         <div className="theme-thumbnail"
                 onClick={props.onClick} >
+
             <img className="theme-image" src={props.image} alt={props.name} />
             <div className="theme-name">
                 {props.name}
