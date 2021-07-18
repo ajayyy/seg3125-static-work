@@ -6,18 +6,32 @@ import ThemePreview from './components/ThemePreview';
 import SearchPage from './components/SearchPage';
 import SubmitPage from './components/SubmitPage';
 import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
+
 
 const home = 'home', search = 'search', submit = 'submit', themePreview = 'themePreview';
 let state, setState;
 
 function App() {
   [state, setState] = useState({
-    page: home
+    page: home,
+    language: 'en',
   });
 
   return (
     <div className="App">
       <h1 style={{fontSize: "55px"}}>Themeorama</h1>
+
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Language
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={() => setState({...state, language: 'en'})}>English</Dropdown.Item>
+          <Dropdown.Item onClick={() => setState({...state, language: 'fr'})}>French</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
 
       { getPage() }
 
@@ -30,10 +44,12 @@ function getPage() {
     case home:
     case search:
       return <SearchPage
-              pageChange={pageChange} />;
+              pageChange={pageChange}
+              language={state.language} />;
     case submit:
       return <SubmitPage
-              pageChange={pageChange} />;
+              pageChange={pageChange}
+              language={state.language} />;
     case themePreview:
       return <ThemePreview
               image={state.theme.image}
@@ -41,20 +57,21 @@ function getPage() {
               rating={state.theme.rating}
               categoryIcon={state.theme.categoryIcon}
               category={state.theme.category}
-              pageChange={pageChange} />;
+              pageChange={pageChange}
+              language={state.language} />;
     default:
       return null;
   }
 }
 
 function pageChange(page, theme) {
-  setState(prevState => ({page, theme}));
+  setState(prevState => ({...state, page, theme}));
   window.history.pushState({page, theme}, null);
 }
 
 window.onpopstate = (event) => {
   console.log(event)
-  setState(prevState => ({page: event.state?.page || home, theme: event.state?.theme}));
+  setState(prevState => ({...state, page: event.state?.page || home, theme: event.state?.theme}));
 };
 
 

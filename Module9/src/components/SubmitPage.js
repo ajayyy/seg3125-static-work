@@ -3,6 +3,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTag } from '@fortawesome/free-solid-svg-icons'
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
+const strings = {
+    en: {
+        "name": "Name",
+        "dragToUpload": "Drag an image to upload",
+        "publish": "Publish",
+        "main-color": "Main colour",
+        "second-color": "Secondary colour",
+        "accent-color": "Accent colour"
+
+    },
+    fr: {
+        "name": "Nom",
+        "dragToUpload": "Glissez un fichier pour le télécharger",
+        "publish": "Publier",
+        "main-color": "Couleur principale",
+        "second-color": "Couleur secondaire",
+        "accent-color": "Couleur d'accent"
+    }
+}
+
 function SubmitPage(props) {
     return (
         <div className="submit-page">
@@ -15,7 +35,7 @@ function SubmitPage(props) {
                     <img id="theme-preview-image" className="theme-preview-image hidden" src={props.image} alt={props.name} />
                     <input type="file" className="hidden" id="theme-preview-upload"/>
                     <div id="upload-text">
-                        {"Drag an image to upload"}
+                        {strings[props.language].dragToUpload}
                     </div>
                 </div>
 
@@ -23,15 +43,15 @@ function SubmitPage(props) {
                 <div className="submit-preview-right">
                     <div className="submit-preview-colour">
                         <input type="color" id="main-color"/>
-                        {` Main colour`}
+                        {` ${strings[props.language]['main-color']}`}
                     </div>
                     <div className="submit-preview-colour">
                         <input type="color" id="second-color"/>
-                        {` Secondary colour`}
+                        {` ${strings[props.language]['second-color']}`}
                     </div>
                     <div className="submit-preview-colour">
                         <input type="color" id="accent-color"/>
-                        {` Accent colour`}
+                        {` ${strings[props.language]['accent-color']}`}
                     </div>
                 </div>
             </div>
@@ -42,13 +62,13 @@ function SubmitPage(props) {
                         <FontAwesomeIcon icon={faTag} /> 
                     </InputGroup.Text>
                     <FormControl
-                        placeholder="Name"
-                        aria-label="Name"
+                        placeholder={strings[props.language]['name']}
+                        aria-label={strings[props.language]['name']}
                         aria-describedby="name-addon" />
                 </InputGroup>
             </div>
 
-            <Button variant="primary">Publish</Button>
+            <Button variant="primary">{strings[props.language].publish}</Button>
         </div>
     )
 }

@@ -5,6 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react';
 
+const strings = {
+    en: {
+        search: 'Search',
+        preferredColour: 'Preferred Colour',
+        createYourOwn: 'Create your own'
+    },
+    fr: {
+        search: 'Rechercher',
+        preferredColour: 'Couleur préférée',
+        createYourOwn: 'Créer votre propre'
+    }
+}
+
 function SearchPage(props) {
     const [state, setState] = useState({
         search: ""
@@ -17,14 +30,14 @@ function SearchPage(props) {
                     <FontAwesomeIcon icon={faSearch} /> 
                 </InputGroup.Text>
                 <FormControl
-                    placeholder="Search"
-                    aria-label="Search"
+                    placeholder={strings[props.language].search}
+                    aria-label={strings[props.language].search}
                     aria-describedby="search-addon"
                     onChange={(e) => setState({search: e.target.value})} />
             </InputGroup>
 
             <div className="colors">
-                {"Preferred Colour "}
+                {strings[props.language].preferredColour + " "}
                 <input type="color"/>
             </div>
             
@@ -32,7 +45,7 @@ function SearchPage(props) {
                 search={state.search}
                 pageChange={props.pageChange} />
 
-            <Button variant="primary" onClick={() => props.pageChange('submit')}>Create your own</Button>
+            <Button variant="primary" onClick={() => props.pageChange('submit')}>{strings[props.language].createYourOwn}</Button>
         </div>
     );
 }
