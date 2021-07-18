@@ -2,8 +2,15 @@
     margin-bottom: 20px;
 }
 
+#upload-error {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+}
+
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .submit-page-top {

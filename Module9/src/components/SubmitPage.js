@@ -1,7 +1,7 @@
 import './SubmitPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTag } from '@fortawesome/free-solid-svg-icons'
-import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import { InputGroup, FormControl, Button, Card } from 'react-bootstrap';
 
 const strings = {
     en: {
@@ -10,8 +10,9 @@ const strings = {
         "publish": "Publish",
         "main-color": "Main colour",
         "second-color": "Secondary colour",
-        "accent-color": "Accent colour"
-
+        "accent-color": "Accent colour",
+        "uploadError": "Upload Error",
+        "wrongFileFormat": "The file you uploaded is not a valid image"
     },
     fr: {
         "name": "Nom",
@@ -19,7 +20,9 @@ const strings = {
         "publish": "Publier",
         "main-color": "Couleur principale",
         "second-color": "Couleur secondaire",
-        "accent-color": "Couleur d'accent"
+        "accent-color": "Couleur d'accent",
+        "uploadError": "Erreur de téléchargement",
+        "wrongFileFormat": "Le fichier que vous avez téléchargé n'est pas un image valide"
     }
 }
 
@@ -36,6 +39,22 @@ function SubmitPage(props) {
                     <input type="file" className="hidden" id="theme-preview-upload"/>
                     <div id="upload-text">
                         {strings[props.language].dragToUpload}
+                    </div>
+                    <div id="upload-error" className="hidden">
+                        <Card
+                            bg={"danger"}
+                            text={'white'}
+                            style={{ width: '18rem' }}
+                            className="mb-2"
+                        >
+                            <Card.Header></Card.Header>
+                            <Card.Body>
+                            <Card.Title>{strings[props.language].uploadError}</Card.Title>
+                            <Card.Text>
+                                {strings[props.language].wrongFileFormat}
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
 
@@ -74,7 +93,6 @@ function SubmitPage(props) {
 }
 
 function fileDropped(e) {
-    console.log("dragged")
     // Prevent file being opened
     e.preventDefault();
 
@@ -85,22 +103,30 @@ function fileDropped(e) {
         const reader = new FileReader();
 
         reader.onloadend = () => {
+            const uploadError = document.getElementById('upload-error');
+            const imageElement = document.getElementById('theme-preview-image');
             document.getElementById("upload-text").classList.add("hidden");
 
-            const imageElement = document.getElementById('theme-preview-image');
-            imageElement.classList.remove('hidden');
-            imageElement.onload = () => {
-                const topColours = findTopColours(imageElement);
-                const colour1 = topColours[0].allColours[0];
-                const colour2 = topColours[1]?.allColours[0];
-                const colour3 = topColours[2]?.allColours[0];
+            if (file.type.match('image.*')) {
+                uploadError.classList.add("hidden");
 
-                if (colour1) document.getElementById("main-color").value = rgbaToHex(colour1);
-                if (colour2) document.getElementById("second-color").value = rgbaToHex(colour2);
-                if (colour3) document.getElementById("accent-color").value = rgbaToHex(colour3);
+                imageElement.classList.remove('hidden');
+                imageElement.onload = () => {
+                    const topColours = findTopColours(imageElement);
+                    const colour1 = topColours[0].allColours[0];
+                    const colour2 = topColours[1]?.allColours[0];
+                    const colour3 = topColours[2]?.allColours[0];
+
+                    if (colour1) document.getElementById("main-color").value = rgbaToHex(colour1);
+                    if (colour2) document.getElementById("second-color").value = rgbaToHex(colour2);
+                    if (colour3) document.getElementById("accent-color").value = rgbaToHex(colour3);
+                }
+
+                imageElement.src = reader.result;
+            } else {
+                uploadError.classList.remove('hidden');
+                imageElement.classList.add('hidden');
             }
-
-            imageElement.src = reader.result;
         }
 
         reader.readAsDataURL(file);
