@@ -1,6 +1,6 @@
 import './SearchPage.css';
 import Gallery from "./Gallery";
-import { InputGroup, FormControl } from 'react-bootstrap';
+import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -23,6 +23,8 @@ function SearchPage(props) {
             </div>
             
             <Gallery />
+
+            <Button variant="primary" onClick={() => props.pageChange('submit')}>Create your own</Button>
         </div>
     );
 }
