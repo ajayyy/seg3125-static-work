@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Gallery from "./components/Gallery";
-import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 import ThemePreview from './components/ThemePreview';
 import SearchPage from './components/SearchPage';
 import SubmitPage from './components/SubmitPage';
