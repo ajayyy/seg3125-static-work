@@ -1,7 +1,7 @@
 import './SubmitPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
-import { InputGroup, FormControl, Button, Card } from 'react-bootstrap';
+import { faTag, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { InputGroup, FormControl, Button, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 const strings = {
     en: {
@@ -11,6 +11,9 @@ const strings = {
         "main-color": "Main colour",
         "second-color": "Secondary colour",
         "accent-color": "Accent colour",
+        "main-help": "The colour used for backgrounds",
+        "second-help": "The colour used for secondary sections",
+        "accent-help": "The colour used for highlights",
         "uploadError": "Upload Error",
         "wrongFileFormat": "The file you uploaded is not a valid image"
     },
@@ -21,6 +24,9 @@ const strings = {
         "main-color": "Couleur principale",
         "second-color": "Couleur secondaire",
         "accent-color": "Couleur d'accent",
+        "main-help": "La couleur utilisée pour les fonds",
+        "second-help": "La couleur utilisée pour les sections secondaires",
+        "accent-help": "La couleur utilisée pour les highlights",
         "uploadError": "Erreur de téléchargement",
         "wrongFileFormat": "Le fichier que vous avez téléchargé n'est pas un image valide"
     }
@@ -62,15 +68,42 @@ function SubmitPage(props) {
                 <div className="submit-preview-right">
                     <div className="submit-preview-colour">
                         <input type="color" id="main-color"/>
-                        {` ${strings[props.language]['main-color']}`}
+                        {` ${strings[props.language]['main-color']} `}
+                        <OverlayTrigger
+                                placement="right"
+                                overlay={
+                                    <Tooltip>
+                                        {strings[props.language]['main-help']}
+                                    </Tooltip>
+                                } >
+                            <FontAwesomeIcon icon={faQuestionCircle} /> 
+                        </OverlayTrigger>
                     </div>
                     <div className="submit-preview-colour">
                         <input type="color" id="second-color"/>
-                        {` ${strings[props.language]['second-color']}`}
+                        {` ${strings[props.language]['second-color']} `}
+                        <OverlayTrigger
+                                placement="right"
+                                overlay={
+                                    <Tooltip>
+                                        {strings[props.language]['second-help']}
+                                    </Tooltip>
+                                } >
+                            <FontAwesomeIcon icon={faQuestionCircle} /> 
+                        </OverlayTrigger>
                     </div>
                     <div className="submit-preview-colour">
                         <input type="color" id="accent-color"/>
-                        {` ${strings[props.language]['accent-color']}`}
+                        {` ${strings[props.language]['accent-color']} `}
+                        <OverlayTrigger
+                                placement="right"
+                                overlay={
+                                    <Tooltip>
+                                        {strings[props.language]['accent-help']}
+                                    </Tooltip>
+                                } >
+                            <FontAwesomeIcon icon={faQuestionCircle} /> 
+                        </OverlayTrigger>
                     </div>
                 </div>
             </div>
