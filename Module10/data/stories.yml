@@ -11,14 +11,15 @@ stories:
    - intent: goodbye
    - action: utter_goodbye
 
-#  - story: greet and unsubscribe
-#    steps:
-#    - intent: greet
-#    - action: utter_greet
-#    - intent: unsubscribe
-#    - action: unsubscribe_form
-#    - active_loop: unsubscribe_form
-#    - intent: thanks
-#    - action: utter_thanks
-#    - intent: goodbye
-#    - action: utter_goodbye
+ - story: greet and unsubscribe
+   steps:
+   - intent: greet
+   - action: utter_greet
+   - intent: unsubscribe
+   - action: utter_ask_reason
+   - intent: intent_unsubscribe_reason
+   - action: utter_unsubscribed_empathy
+   - intent: thanks
+   - action: utter_thanks
+   - intent: goodbye
+   - action: utter_goodbye

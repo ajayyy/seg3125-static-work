@@ -4,14 +4,32 @@ responses:
            Hello! How can I help you?
        - text: |
            Hi!
-   utter_ask_email:
+   utter_ask_reason:
        - text: |
-           What is your email address?
+           Why do you want to unsubscribe?
+       - text: |
+           We're sorry to hear that. Could you tell us why you want to unsubscribe?
+       - text: |
+           Alright, is there any reason you want to unsubscribe?
+       - text: |
+           Okay, why do you want to unsubscribe?
+#    utter_ask_email:
+#        - text: |
+#            What is your email address?
    utter_subscribed:
        - text: |
            Check your inbox at {email} in order to finish subscribing to the newsletter!
        - text: |
            You're all set! Check your inbox at {email} to confirm your subscription.
+   utter_unsubscribed_empathy:
+       - text: |
+           Glad we could get this resolved
+       - text: |
+           Sorry for bothering you, but you are unsubscribed now
+        - text: |
+           Thanks for explaining, it's all fixed now
+        - text: |
+           You are unsubscribed now, sorry about that
    utter_thanks:
        - text: |
            Glad I could help

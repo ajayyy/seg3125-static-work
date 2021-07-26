@@ -17,12 +17,27 @@ nlu:
     - Can you send me the newsletter?
     - Can you sign me up for the newsletter?
 
+- intent: unsubscribe
+  examples: |
+    - I want to unsubscribe
+    - I want to leave the newsletter
+    - I want to quit this
+    - I want to stop getting emails
+
 - intent: inform
   examples: |
     - My email is example@example.com
     - random@example.com
     - Please send it to anything@example.com
     - Email is something@example.com
+
+- intent: intent_unsubscribe_reason
+  examples: |
+    - I don't want to receive emails
+    - I don't want to receive emails anymore
+    - I don't want to receive more emails
+    - I am not interested anymore
+    - I don't have time
 
 - intent: thanks
   examples: |
