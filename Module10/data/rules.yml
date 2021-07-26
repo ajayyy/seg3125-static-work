@@ -12,3 +12,19 @@ rules:
     - action: newsletter_form
     - active_loop: null
     - action: utter_subscribed
+
+  - rule: submit form thanks
+    condition:
+    - active_loop: newsletter_form
+    steps:
+    - active_loop: null
+    - intent: thanks
+    - action: utter_thanks
+  
+  - rule: submit form goodbye
+    condition:
+    - active_loop: newsletter_form
+    steps:
+    - active_loop: null
+    - intent: goodbye
+    - action: utter_goodbye

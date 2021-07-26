@@ -6,10 +6,6 @@ stories:
    - intent: subscribe
    - action: newsletter_form
    - active_loop: newsletter_form
-   - intent: thanks
-   - action: utter_thanks
-   - intent: goodbye
-   - action: utter_goodbye
 
  - story: greet and unsubscribe
    steps:
